@@ -9,8 +9,7 @@ import (
 )
 
 var (
-	hotels = map[int]*model.Hotel{}
-	seq    = 1
+	hotels = []*model.Hotel{}
 )
 
 // Create hotel method
@@ -22,8 +21,7 @@ func CreateHotel(c echo.Context) error {
 	if err := c.Bind(h); err != nil {
 		return err
 	}
-	hotels[seq] = h
-	seq++
+	hotels = append(hotels, h)
 
 	return c.JSON(http.StatusOK, h)
 }
