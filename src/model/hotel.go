@@ -10,7 +10,7 @@ type (
 		Address     Address   `json:"address"`
 		Rating      int       `json:"rating"`
 		Description string    `json:"description"`
-		Daily       string    `json:"dailyPrice"`
+		Daily       float32   `json:"dailyPrice"`
 		Rooms       int       `json:"rooms"`
 	}
 	// Represents the address of a single Hotel
